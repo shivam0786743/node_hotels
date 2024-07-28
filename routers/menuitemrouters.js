@@ -30,7 +30,7 @@ catch(err){
 })
 router.get("/:tastetype",async(req,res)=>{
   try {
-    const tastetype = req.params.tastetype; // extract the worktype from url parameter
+    const tastetype = req.params.tastetype; // extract the tastetype from url parameter
     if (tastetype=="sweet" || tastetype== "sour" || tastetype =="spice") {
       const response = await menuitem.find({ taste:tastetype });
       console.log("data is saved");
@@ -43,4 +43,6 @@ router.get("/:tastetype",async(req,res)=>{
     res.status(500).json({error: 'intrnal server error'});
   }
 })
+// for export the routers
 module.exports= router;
+// finally export the router
