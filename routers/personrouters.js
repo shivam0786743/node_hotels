@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
     const newperson = new person(data);
     const response = await newperson.save();
     console.log("data is saved");
-    res.send(200).json(response);
+    res.send(response);
   } catch (error) {
     console.log(error);
     res.status(500).json({
